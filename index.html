@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEED</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-family: sans-serif;
+    }
+    .veed {
+        margin: 0;
+        padding: 0;
+    }
+    .veedContainer {
+        padding: 5px 80px;
+    }
+    .veedHeading h1 {
+        text-align: center;
+        font-size: 4.9rem;
+        font-weight: 700;
+        line-height: 5.8rem;
+        width: 100%;
+        margin: 3rem auto 7rem;
+    }
+    .heroImg {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 1rem;
+    }
+    .heroImg img {
+        width: 100%;
+        height: 100%;
+        padding: 0 7.8rem;
+        z-index: 2;
+    }
+    .heroImgBg {
+        position: absolute;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), #FF289C;
+        height: 30rem;
+        width: 100%;
+        opacity: 0.1;
+        border-radius: 12px;
+        z-index: 1;
+    }
+    .veedIntro {
+        margin: 8rem 2.3rem 4.6rem;
+    }
+    .veedIntro h3 {
+        font-size: 2.8rem;
+        font-weight: 500;
+    }
+    .veedIntro h3 span {
+        font-weight: bold;
+    }
+    .veedParagraph {
+
+    }
+    .boldParagraph {
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .thinParagraph {
+        padding-top: 1.5rem;
+        font-size: 2.1rem;
+    }
+    .videolink {
+        text-align: center;
+        padding-top: 3.3rem;
+    }
+    .videolink a {
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: #2854C5;
+        border-bottom: 4px solid #2854C5;
+    }
+
+    /*     *************     Veed Tools      *************      */
+    .veedTools {
+        display: flex;
+        align-items: center;
+        padding: 0rem 5rem 2rem 2.2rem;
+    }
+    .veedToolsParagraph {
+        width: 50%;
+    }
+    .veedToolsParagraph p {
+        font-size: 2.1rem;
+        font-weight: 500;
+    }
+    .veedToolsImg {
+        width: 50%;
+        padding-left: 3rem;
+    }
+    .veedToolsImg img {
+        width: 100%;
+        height: 100%;
+        margin: 0 2.5rem;
+    }
+
+    /*     *************     Veed Tools      *************      */
+
+    .veedShop {
+        display: flex;
+        align-items: center;
+        padding: 2rem 0rem;
+    }
+    .veedShopParagraph {
+        width: 50%;
+    }
+    .veedShopParagraph p {
+        font-size: 2.1rem;
+        font-weight: 500;
+    }
+    .veedShopImg {
+        width: 50%;
+        padding: 0 5rem 0 2rem;
+    }
+    .veedShopImg img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .veedStarted {
+        padding: 0 2rem;
+    }
+    .veedStarted p {
+        font-size: 1.9rem;
+        padding: 1rem 0;
+    }
+    .veedStarted p a {
+        text-decoration: none;
+        color: #2854C5;
+        border-bottom: 4px solid #2854C5;
+    }
+    .veedFooter {
+        background-color: #000;
+        margin-top: 3rem;
+        padding: 8rem 11rem ;
+    }
+    .veedfooterLogo {
+        width: 17.3rem;
+    }
+    .veedfooterLogo img {
+        width: 100%;
+        height: 100%;
+    }
+    .veedFooterText {
+        width: 40rem;
+        margin-top: 1.5rem;
+    }
+    .veedFooterText span {
+        font-size: 1.8rem;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    hr {
+        margin-top: 5.9rem;
+        color: #FFFFFF;
+        opacity: 0.5;
+    }
+    .footerLinks {
+        display: flex;
+        justify-content: space-between;
+    }
+    .icons {
+        display: flex;
+        padding: 0;
+        margin: 1.1rem 0;
+    }
+    .icons-list {
+        margin-right: 1.2rem;
+        list-style: none;
+    }
+    .footer-icon {
+        font-size: 2rem;
+        background: #FFFFFF;
+        border-radius: 50%;
+        opacity: 0.3;
+        padding: .8rem;
+        color: #000;
+    }
+    .terms-conditions ul {
+        display: flex;
+        align-items: center;
+    }
+    .terms-conditions ul li {
+        color: #FFFFFF;
+        opacity: 0.7;
+        font-size: 1.8rem;
+        margin-left: 2rem;
+    }
+    .termsDot {
+        display: flex;
+        align-items: center;
+    }
+    .termsDot p {
+        color: #FFFFFF;
+        opacity: 0.7; 
+        font-size: 1.8rem;
+        margin-right: -2.4rem;
+        padding: 0;
+    }
+    .terms-conditions span {
+        display: flex;
+        justify-content: end;
+        color: #FFFFFF;
+        opacity: 0.2;
+        font-size: 1.85rem;
+        margin-top: -1rem;
+    }
+    @media screen and (max-width: 1024px) {
+        .veedHeading h1 {
+            font-size: 2.3rem;
+            line-height: 3rem;
+            margin: 2rem auto 3rem;
+        }
+        .heroImgBg {
+            height: 16rem;
+            width: 75%;
+        }
+        .veedIntro {
+            margin: 4rem 0;
+        }
+        .veedIntro h3 {
+            font-size: 2rem;
+        }
+        .boldParagraph {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .thinParagraph {
+            font-size: 1.5rem;
+        }
+        .veedStarted p a {
+            border-bottom: 2px solid #2854C5;
+        }
+        .videolink a {
+            font-size: 1.7rem;
+            font-weight: 600;
+            border-bottom: 3px solid #2854C5;
+        }
+        .veedToolsParagraph p {
+            font-size: 1.3rem;
+        }
+        .veedShopParagraph p {
+            font-size: 1.3rem;
+        }
+        .veedStarted p {
+            font-size: 1.3rem;
+            padding: 0;
+        }
+        .veedFooter {
+            margin-top: 0;
+            padding: 4rem 7rem;
+        }
+        .veedfooterLogo {
+            width: 10rem;
+        }
+        .veedFooterText {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .veedFooterText span {
+            font-size: 1.1rem;
+        }
+        hr {
+            margin-top: 3rem;
+        }
+        .icons-list {
+            margin-right: .5rem;
+            width: 2.8rem;
+            height: 2.8rem;
+        }
+        .terms-conditions ul li {
+            font-size: 1.2rem;
+        }
+        .termsDot p {
+            font-size: 1.2rem;
+        }
+        .terms-conditions span {
+            font-size: 1rem;
+        }
+        .modeContainer {
+            margin: .5rem 0 0 1rem;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .veedContainer {
+            padding: 5px 50px;
+        }
+        .heroImgBg {
+            width: 80%;
+            height: 13rem;
+        }
+        .veedTools {
+            padding: 0 2rem 2rem 0;
+        }
+        .veedToolsImg {
+            padding-left: .5rem;
+        }
+        .veedShopImg {
+            padding: 0 2rem 0 0;
+        }
+        .veedStarted {
+            padding: 0 0 3rem 0;
+        }
+        .veedFooter {
+            padding: 3rem;
+        }
+    }
+    @media screen and (max-width: 680px) {
+        .veedContainer {
+            padding: 5px 50px;
+        }
+        .heroImg img {
+            padding: 0;
+        }
+        .veedTools {
+            flex-direction: column;
+        }
+        .veedToolsParagraph {
+            width: 100%;
+        }
+        .veedToolsImg {
+            width: 100%;
+        }
+        .veedTools {
+            padding: 0;
+        }
+        .veedToolsImg img {
+            margin: 0;
+        }
+        .veedShop {
+            flex-direction: column-reverse;
+        }
+        .veedShopParagraph {
+            width: 100%;
+        }
+        .veedShopImg {
+            width: 100%;
+            padding: 3rem;
+        }
+        .footerLinks {
+            flex-direction: column;
+        }
+    }
+    @media screen and (max-width: 425px) {
+        .veedContainer {
+            padding: 5px 30px;
+        }
+        .veedHeading h1 {
+            margin: 1rem auto 2rem;
+        }
+        .heroImg {
+            margin: 0;
+        }
+        .heroImgBg {
+            width: 83%;
+            height: 14rem;
+        }
+        .veedHeading h1 {
+            font-size: 2rem;
+            line-height: 2.1rem;
+        }
+        .veedIntro {
+            margin: 4rem 0 2rem;
+        }
+        .veedIntro h3 {
+            font-size: 1.5rem;
+        }
+        .boldParagraph {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .thinParagraph {
+            font-size: 1rem;
+            padding: 0;
+        }
+        .videolink {
+            padding-top: 1.5rem;
+        }
+        .videolink a {
+            font-size: 1.2rem;
+            border-bottom: 2px solid #2854C5;
+        }
+        .veedToolsParagraph p {
+            font-size: 1.1rem;
+        }
+        .veedToolsImg {
+            padding: 0;
+        }
+        .veedShopParagraph p {
+            font-size: 1.1rem;
+        }
+        .veedShop {
+            padding-top: 1rem;
+        }
+        .veedShopImg {
+            padding: 0;
+        }
+        .veedStarted p {
+            font-size: 1rem;
+        }
+        .veedFooterText span {
+            font-size: .9rem;
+        }
+        .terms-conditions span {
+            justify-content: start;
+        }
+        .veedFooter {
+            padding: 1.8rem;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        .veedContainer {
+            padding: 5px 20px;
+        }
+        .videolink a {
+            font-size: 1rem;
+        }
+        .veedFooter {
+            padding: 1.2rem;
+        }
+    }
+    .modeContainer {
+        margin: 1rem 0 0 2rem;
+    }
+    .bi-brightness-high-fill {
+        font-size: 4rem;
+        cursor: pointer;
+    }
+    .bi-moon {
+        font-size: 4rem;
+    }
+
+</style>
+
+
+<body>
+
+
+    <div class="veed">
+        <div class="modeContainer">
+            <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+        </div>
+        <div class="veedContainer">
+            <!-- *****************      Main Heading       ******************* -->
+            <div class="veedHeading">
+                <h1>
+                    Anyone can make stunning videos with VEED
+                </h1>
+                <div class="heroImg">
+                    <img src="./Images/mackBook-pro.png" />
+                    <div class="heroImgBg"></div>
+                </div>
+            </div>
+            <!--  ****************      VEED Intro      *******************  -->
+            <div class="veedIntro">
+                <h3>Hi <span>&#10094;NAME&#10095;</span></h3>
+                <div class="veedParagraph">
+                    <p class="boldParagraph">Your new dashboard makes it easy to create eye-catching, colourful and professional-quality videos – even if it’s your first time editing.</p>
+                    <p class="thinParagraph">VEED’s intuitive editing dashboard is so simple to use, anyone can learn. Just starting out? Try diving in with one of our ready-to-edit templates, which come in a huge range of themes, colours and sizes.</p>
+                </div>
+                <div class="videolink">
+                    <a>[Start making my video now]</a>
+                </div>
+            </div>
+
+            <!--  ****************      VEED Tools      *******************  -->
+            <div class="veedTools">
+                <div class="veedToolsParagraph">
+                    <p>
+                        Explore tools like subtitles, animated text, frames and progress bars, experiment with filters or add some fun background music – and it’s all as simple as click, drag and drop.
+                    </p>
+                </div>
+                <div class="veedToolsImg">
+                    <img src="./Images/content-graphic-1.png" />
+                </div>
+            </div>
+
+            <!--  ****************      VEED Shop      *******************  -->
+
+            <div class="veedShop">
+                <div class="veedShopImg">
+                    <img src="./Images/content-graphic-2.png" />
+                </div>
+                <div class="veedShopParagraph">
+                    <p>
+                        Why not create fresh content for your social media or website? Or make an event promo? You could showcase recent customer testimonials, introduce your team by video or simply create a reel of your holiday photos. The choice is yours.
+                    </p>
+                </div>
+            </div>
+
+            <!--  ****************      VEED Started      *******************  -->
+
+            <div class="veedStarted">
+                <p>Get started now, and you could have your professional-quality video finished in minutes.</p>
+                <p>Have fun!</p>
+                <p>The Team at VEED</p>
+                <p>P.S. Want to learn the basics of VEED, fast? This <a href="https://www.youtube.com/watch?v=LfJRgXKDqh0&t=3s">super-quick intro video for beginners</a> will give you what you need to know in just 1 min.</p> 
+            </div>
+
+        </div>
+
+            <!--  ****************       VEED Footer      *******************  -->
+
+            <div class="veedFooter">
+                <div class="veedfooterContainer">
+                    <div class="veedfooterLogo">
+                        <img src="./Images/Logo.svg" />
+                    </div>
+                    <div class="veedFooterText">
+                        <span>The easy way to create stunning videos, add subtitles and grow your audience.</span>
+                    </div>
+                    <hr />
+                    <div class="footerLinks">
+                        <ul class="icons">
+                            <li class="icons-list"><i class="footer-icon bi bi-youtube"></i></li>
+                            <li class="icons-list"><i class="footer-icon bi bi-instagram"></i></li>
+                            <li class="icons-list"><i class="footer-icon bi bi-twitter"></i></li>
+                        </ul>
+                        <div class="terms-conditions">
+                            <div class="termsDot">
+                                <p>Tools</p>
+                                <ul>
+                                    <li>Products</li>
+                                    <li>Company</li>
+                                </ul>
+                            </div>
+                            <span>©Copyrigh 2020 VEED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        const toggle = document.getElementById('toggleDark');
+        const body = document.querySelector('body');
+
+        toggle.addEventListener('click', function(){
+            this.classList.toggle('bi-moon');
+            if(this.classList.toggle('bi-brightness-high-fill')){
+                body.style.background = 'white';
+                body.style.color = 'black';
+                body.style.transition = '1s';
+            }else{
+                body.style.background = 'black';
+                body.style.color = 'white';
+                body.style.transition = '1s';
+            }
+        });
+    </script>
+</body>
+</html>
